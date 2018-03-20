@@ -69,9 +69,63 @@ nav#catagory_menu a:hover{
 
 
 
+nav#top_menu{
+	margin:20px 0;
+	float:right;
+}
 
 
+nav#top_menu ul{
+	list-style:none;
+	font-family:Verdana;
+}
 
+nav#top_menu ul li{
+	float:left;
+	margin:0 15px;
+	font-size: 14px;
+}
+
+
+nav#top_menu a{
+	display:block;
+	height:20px;
+	text-decoration:none;
+	color:#fff;
+	padding:10px;
+}
+
+
+nav#top_menu a:hover{
+	background-image:url(../images/purple.gif);
+	background-repeat:repeat-x;
+	background-position:bottom;
+}
+
+
+#bestProduct{
+	border:solid 1px #FFFFFF;
+	border-radius:10px;
+	width:910px;
+	min-height:260px;
+	background:#ebebeb;
+	padding:10px;
+	text-align:center;
+}
+
+footer{
+	margin:10px 0 0 0;
+	height:50px;
+	background-image: url(../images/under_logo.gif);
+	background-repeat: no-repeat;
+	background-position: 40px center;
+}
+
+footer #copy{
+	margin:20px 0 10px 300px;
+	width:600px;
+	float:left;
+}
 
 
 
