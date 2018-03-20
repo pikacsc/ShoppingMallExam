@@ -116,6 +116,31 @@ where o.oseq=d.oseq and o.id = m.id and d.pseq = p.pseq;
 
 
 
+--베스트 상품 
+create or replace view best_pro_view
+as
+select pseq, name, price2, image
+from( select rownum, pseq, name, price2, image
+    from product
+    where bestyn='y'
+    order by indate desc)
+where rownum <=4;
+
+select * from best_pro_view;
+
+
+
+
+--신상품
+create or replace view new_pro_view
+as
+select pseq, name, price2, image
+from( select rownum, pseq, name, price2, image
+    from product
+    where useyn = 'y'
+    order by indate desc)
+where rownum <=4;
+
 
 commit;
 
