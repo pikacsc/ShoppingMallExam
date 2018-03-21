@@ -5,7 +5,7 @@
 <!-- 메인 이미지가 들어가는 곳 시작 -->
 <div class="clear"></div>
 <div id="main_img">
-	<img src="/images/main_img.jpg">
+	<img src="images/main_img.jpg">
 </div>
 
 <!-- 메인 이미지 들어가는 곳 끝 -->
