@@ -2,6 +2,7 @@ package com.csc.controller;
 
 import com.csc.contoller.action.Action;
 import com.csc.contoller.action.IndexAction;
+import com.csc.contoller.action.ProductDetailAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -20,6 +21,8 @@ public class ActionFactory {
 		
 		if(command.equals("index")) {
 			action = new IndexAction();
+		} else if(command.equals("product_detail")){
+			action = new ProductDetailAction();
 		}
 		
 		return action;

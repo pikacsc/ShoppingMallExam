@@ -159,6 +159,15 @@ div#front{
 
 
 
+
+#item{
+	width:200px;
+	float:left; margin:0 13px;
+	text-align:center;
+}
+
+
+
 #item img{
 	width:190px;
 	height:200px;
@@ -192,12 +201,97 @@ a:hover{
 
 
 
+#sub_img {
+	text-align: center;
+}
+
+#sub_img img{
+	margin: 9px 0 0 0;
+}
+
+#sub_menu{
+	width:250px;
+	float:left;
+	margin: 20px 0;
+}
+
+#sub_menu ul{
+	margin:20px 0 0 16px;
+	list-style:none;
+}
 
 
 
 
 
 
+
+
+
+#sub_menu a{
+	text-decoration:none;
+	color:white; font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold; font-size:16px;
+	display:block;
+	height:15px;
+	width:160px;
+	padding:7px;
+	border-bottom:1px dotted #999;
+	background-image:url(../images/bullet.gif);
+	background-repeat:no-repeat;
+	background-position:right center;
+}
+
+#sub_menu a:hover{
+	background-image:url(../images/bullet_orange.gif);
+	background-repeat:no-repeat;
+	background-position:right center;
+	color: #F90; font-weight:bold; font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+article{
+	float:right;
+	width:680px;
+	padding-right:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:1em;
+	line-height:1.5em;
+}
+
+article p {
+	padding-left:10px;
+}
+
+article table#notice{
+	width:670px;
+	border-collapse:collapse;
+	border-top:1px solid #999;
+}
+
+article table#notice th{
+	height:20px;
+	width:70px;
+	font-size:14px;
+	font-weight:bold;
+	padding:5px;
+	color:#FFF;
+	border-bottom:1px dotted #999;
+}
+
+article table#notice td{
+	text-align:left;
+	padding:6px 0;
+	border-bottom: 1px dotted #999;
+}
+
+article table#notice tr:hover{
+	background-color:#DDF;
+	cursor:pointer;
+	color:red;
+}
 
 
 
