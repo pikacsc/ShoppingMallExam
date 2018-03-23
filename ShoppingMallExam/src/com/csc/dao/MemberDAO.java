@@ -55,16 +55,18 @@ public class MemberDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			memberVO = new MemberVO();
-			memberVO.setId(rs.getString("id"));
-			memberVO.setPwd(rs.getString("pwd"));
-			memberVO.setName(rs.getString("name"));
-			memberVO.setEmail(rs.getString("email"));
-			memberVO.setZipNum(rs.getString("zip_num"));
-			memberVO.setAddress(rs.getString("address"));
-			memberVO.setPhone(rs.getString("phone"));
-			memberVO.setUseyn(rs.getString("useyn"));
-			memberVO.setIndate(rs.getTimestamp("indate"));
+			if(rs.next()) {
+				memberVO = new MemberVO();
+				memberVO.setId(rs.getString("id"));
+				memberVO.setPwd(rs.getString("pwd"));
+				memberVO.setName(rs.getString("name"));
+				memberVO.setEmail(rs.getString("email"));
+				memberVO.setZipNum(rs.getString("zip_num"));
+				memberVO.setAddress(rs.getString("address"));
+				memberVO.setPhone(rs.getString("phone"));
+				memberVO.setUseyn(rs.getString("useyn"));
+				memberVO.setIndate(rs.getTimestamp("indate"));
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 			e.getMessage();
