@@ -73,13 +73,13 @@ public class CartDAO {
 	
 	public void deleteCart(int cseq) {
 		//오늘의 과제 
-		String sql = "delete from cart where cseq = ?";
+		String sql = "delete cart where cseq = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, cseq+"");
+			pstmt.setInt(1, cseq);
 			pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();

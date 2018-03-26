@@ -1,6 +1,9 @@
 package com.csc.controller;
 
 import com.csc.contoller.action.Action;
+import com.csc.contoller.action.CartDeleteAction;
+import com.csc.contoller.action.CartInsertAction;
+import com.csc.contoller.action.CartListAction;
 import com.csc.contoller.action.ContractAction;
 import com.csc.contoller.action.FindZipZumAction;
 import com.csc.contoller.action.IdCheckFormAction;
@@ -50,6 +53,12 @@ public class ActionFactory {
 			action = new LoginAction();
 		} else if(command.equals("logout")) {
 			action = new LogoutAction();
+		} else if(command.equals("cart_insert")) {
+			action = new CartInsertAction();
+		} else if(command.equals("cart_list")) {
+			action = new CartListAction();
+		} else if(command.equals("cart_delete")) {
+			action = new CartDeleteAction();
 		}
 		
 		return action;
