@@ -26,7 +26,7 @@ public class OrderDAO {
 		String selectMaxOseq = "select max(oseq) from orders"; //가장 최신 주문 찾기
 		
 		String insertOrder = "insert into orders(oseq, id) values("
-				+"orders_seq.nextval,?)";
+				+"orders_seq.nextval, ?)";
 	
 		
 		int maxOseq=0;
@@ -74,7 +74,7 @@ public class OrderDAO {
 	
 	
 	public void insertOrderDetail(CartVO cartVO,int maxOseq) {
-		String insertOrderDetail = "insert into order_detail(odseq, oseq, "
+		String insertOrderDetail = "insert into order_detail(obseq, oseq, "
 				+ "pseq, quantity) values(order_detail_seq.nextval, ?, ?, ?)";
 		
 		String updateCartResult = "update cart set result=2 where cseq?";	
@@ -106,7 +106,7 @@ public class OrderDAO {
 	
 	public ArrayList<OrderVO> listOrderById(String id, String result, int oseq){
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
-		String sql = "select * from order_view where id = ?"
+		String sql = "select * from order_view where id = ? "
 				+ "and result like '%'||?||'%' and oseq = ?";
 		Connection conn =null;
 		PreparedStatement pstmt = null;
@@ -151,7 +151,7 @@ public class OrderDAO {
 	//현재 진행중인 주문 내역만 조회
 	public ArrayList<Integer> selectSeqOrderIng(String id){
 		ArrayList<Integer> oseqList = new ArrayList<Integer>();
-		String sql = "select distinct oseq from order_view"
+		String sql = "select distinct oseq from order_view "
 				+ "where id=? and result='1' order by oseq desc";
 		Connection conn = null;
 		PreparedStatement pstmt = null;

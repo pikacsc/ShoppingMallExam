@@ -13,6 +13,11 @@ import com.csc.contoller.action.JoinFormAction;
 import com.csc.contoller.action.LoginAction;
 import com.csc.contoller.action.LoginFormAction;
 import com.csc.contoller.action.LogoutAction;
+import com.csc.contoller.action.MyPageAction;
+import com.csc.contoller.action.OrderAllAction;
+import com.csc.contoller.action.OrderDetailAction;
+import com.csc.contoller.action.OrderInsertAction;
+import com.csc.contoller.action.OrderListAction;
 import com.csc.contoller.action.ProductDetailAction;
 import com.csc.contoller.action.ProductKindAction;
 
@@ -59,6 +64,16 @@ public class ActionFactory {
 			action = new CartListAction();
 		} else if(command.equals("cart_delete")) {
 			action = new CartDeleteAction();
+		} else if(command.equals("order_insert")) {
+			action = new OrderInsertAction();
+		} else if(command.equals("order_list")) {
+			action = new OrderListAction();
+		} else if(command.equals("mypage")) {
+			action = new MyPageAction();
+		} else if(command.equals("order_datail")) {
+			action = new OrderDetailAction();
+		} else if(command.equals("order_all")) {
+			action = new OrderAllAction();
 		}
 		
 		return action;
