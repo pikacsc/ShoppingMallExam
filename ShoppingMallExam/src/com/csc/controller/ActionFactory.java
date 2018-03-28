@@ -20,6 +20,10 @@ import com.csc.contoller.action.OrderInsertAction;
 import com.csc.contoller.action.OrderListAction;
 import com.csc.contoller.action.ProductDetailAction;
 import com.csc.contoller.action.ProductKindAction;
+import com.csc.contoller.action.QnaListAction;
+import com.csc.contoller.action.QnaViewAction;
+import com.csc.contoller.action.QnaWriteAction;
+import com.csc.contoller.action.QnaWriteFormAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -74,8 +78,15 @@ public class ActionFactory {
 			action = new OrderDetailAction();
 		} else if(command.equals("order_all")) {
 			action = new OrderAllAction();
+		} else if(command.equals("qna_list")) {
+			action = new QnaListAction();
+		} else if(command.equals("qna_write_form")) {
+			action = new QnaWriteFormAction();
+		} else if(command.equals("qna_write")) {
+			action = new QnaWriteAction();
+		} else if(command.equals("qna_view")) {
+			action = new QnaViewAction();
 		}
-		
 		return action;
 	}
 	

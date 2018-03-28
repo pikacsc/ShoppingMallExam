@@ -83,19 +83,15 @@ public class QnaDAO {
 	public int insertQna(QnaVO qnaVO, String session_id) {
 		int result = 0;
 		String sql = "insert into qna(qseq, subject, content, "
-				+ "reply, id, rep, indate) values(?,?,?,?,?,?)";
+				+ " id) values(qna_seq.nextval,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, qnaVO.getQseq());
-			pstmt.setString(2,qnaVO.getSubject());
-			pstmt.setString(3, qnaVO.getContent());
-			pstmt.setString(4, qnaVO.getReply());
-			pstmt.setString(5, qnaVO.getId());
-			pstmt.setString(6, qnaVO.getRep());
-			pstmt.setTimestamp(7, qnaVO.getIndate());
+			pstmt.setString(1, qnaVO.getSubject());
+			pstmt.setString(2, qnaVO.getContent());
+			pstmt.setString(3, session_id);
 			result = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
