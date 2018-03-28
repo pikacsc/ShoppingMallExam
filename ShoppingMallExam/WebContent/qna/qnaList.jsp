@@ -18,7 +18,7 @@
 			<c:forEach items="${qnaList}" var="qnaVO">
 				<tr>
 					<td>${qnaVO.qseq}</td>
-					<td><a href="CSCServlet?command=qna_view&qseq=${qnaVO.qseq}"></a></td>
+					<td><a href="CSCServlet?command=qna_view&qseq=${qnaVO.qseq}">${qnaVO.subject}</a></td>
 					<td><fmt:formatDate value="${qnaVO.indate}" type="date"/></td>
 					<td>
 						<c:choose>

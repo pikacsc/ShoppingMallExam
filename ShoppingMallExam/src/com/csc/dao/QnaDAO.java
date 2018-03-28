@@ -52,16 +52,17 @@ public class QnaDAO {
 	
 	public QnaVO getQna(int seq) {
 		String sql = "select * from qna where qseq = ?";		
-		QnaVO qnaVO = null;
 		Connection conn = null;
 		PreparedStatement pstmt =null;
 		ResultSet rs = null;
+		QnaVO qnaVO = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
+				qnaVO = new QnaVO();
 				qnaVO.setQseq(rs.getInt("qseq"));
 				qnaVO.setSubject(rs.getString("subject"));
 				qnaVO.setContent(rs.getString("content"));
