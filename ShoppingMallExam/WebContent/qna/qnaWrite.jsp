@@ -10,10 +10,10 @@
 		<form name="formm" action="CSCServlet?command=qna_write" method="post">
 			<fieldset>
 				<legend>Board Info</legend>
-				<label>Title</label>
-				<input type="text" name="subject" size="77" id="QnaTitleInput"><br>
-				<label>Content</label>
-				<textarea name="content" cols="65" rows="8"></textarea><br>
+				<ul style="list-style:none">
+					<li><label for="subject">Title</label><input type="text" name="subject" size="77" id="QnaTitleInput"></li>
+					<li><label>Content</label><textarea name="content" cols="65" rows="8"></textarea></li>
+				</ul>
 			</fieldset>
 			<div class="clear"></div>
 			<div id="buttons" style="float:right">
