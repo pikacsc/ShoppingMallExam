@@ -1,5 +1,9 @@
 package com.csc.controller;
 
+import com.csc.admin.AdminIndexAction;
+import com.csc.admin.AdminLoginAction;
+import com.csc.admin.AdminLogoutAction;
+import com.csc.admin.AdminProductListAction;
 import com.csc.contoller.action.Action;
 import com.csc.contoller.action.CartDeleteAction;
 import com.csc.contoller.action.CartInsertAction;
@@ -86,7 +90,19 @@ public class ActionFactory {
 			action = new QnaWriteAction();
 		} else if(command.equals("qna_view")) {
 			action = new QnaViewAction();
+		} 
+		
+		if(command.equals("admin_login_form")) {
+			action = new AdminIndexAction();
+		} else if(command.equals("admin_login")) {
+			action = new AdminLoginAction();
+		} else if(command.equals("admin_logout")) {
+			action = new AdminLogoutAction();
+		} else if(command.equals("admin_product_list")) {
+			action = new AdminProductListAction();
 		}
+		
+		
 		return action;
 	}
 	
