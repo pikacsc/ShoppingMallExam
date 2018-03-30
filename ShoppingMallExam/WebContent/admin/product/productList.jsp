@@ -46,10 +46,10 @@
 							</a>
 						</td>
 						<td>
-							<fmt:formatNumber value="${productVO.price1}"></fmt:formatNumber>
+							<fmt:formatNumber value="${productVO.price1}"/>
 						</td>
 						<td>
-							<fmt:formatNumber value="${productVO.price2}"></fmt:formatNumber>
+							<fmt:formatNumber value="${productVO.price2}"/>
 						</td>
 						<td>
 							<fmt:formatDate value="${productVO.indate }"/>
