@@ -3,7 +3,10 @@ package com.csc.controller;
 import com.csc.admin.AdminIndexAction;
 import com.csc.admin.AdminLoginAction;
 import com.csc.admin.AdminLogoutAction;
+import com.csc.admin.AdminProductDetailAction;
 import com.csc.admin.AdminProductListAction;
+import com.csc.admin.AdminProductWriteAction;
+import com.csc.admin.AdminProductWriteFormAction;
 import com.csc.contoller.action.Action;
 import com.csc.contoller.action.CartDeleteAction;
 import com.csc.contoller.action.CartInsertAction;
@@ -100,6 +103,12 @@ public class ActionFactory {
 			action = new AdminLogoutAction();
 		} else if(command.equals("admin_product_list")) {
 			action = new AdminProductListAction();
+		} else if(command.equals("admin_product_detail")) {
+			action = new AdminProductDetailAction();
+		} else if(command.equals("admin_product_write_form")) {
+			action = new AdminProductWriteFormAction();
+		} else if(command.equals("admin_product_write")) {
+			action = new AdminProductWriteAction();
 		}
 		
 		
