@@ -371,4 +371,22 @@ public class ProductDAO {
 	    
 	  }
 	
+	
+	public void deleteProduct(String pseq) {
+		String sql = "delete product where pseq = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pseq);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
+	
 }

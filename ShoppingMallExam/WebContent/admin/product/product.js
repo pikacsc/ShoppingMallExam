@@ -85,6 +85,15 @@ function go_search(){
 	theForm.submit;
 }
 
+
+
+function order_search(){
+	var theForm = document.frm;
+	theForm.aciton = "CSCServlet?command=admin_order_list";
+	theForm.submit();
+}
+
+
 function go_total(){
 	var theForm = document.frm;
 	theForm.key.value = "";
@@ -100,11 +109,16 @@ function go_detail(tpage,pseq){
 	theForm.submit();
 }
 
+
+
+
+
 function go_wrt(){
 	var theForm = document.frm;
 	theForm.action = "CSCServlet?command=admin_product_write_form";
 	theForm.submit();
 }
+
 
 //productDetail.jsp
 function go_list(tpage){
@@ -113,6 +127,17 @@ function go_list(tpage){
 	theForm.action = "CSCServlet?command=admin_product_list&tpage="+tpage;
 	theForm.submit();
 }
+
+
+function go_delete(tpage, pseq){
+	if(confirm("정말 삭제하시겠습니까?")){
+		alert("삭제 되었습니다.");
+		location.href="CSCServlet?command=admin_delete_product&tpage="+tpage+"&pseq="+pseq;
+	}else{
+		return false;
+	}
+}
+
 
 function go_mod(tpage, pseq){
 	var theForm = document.frm;

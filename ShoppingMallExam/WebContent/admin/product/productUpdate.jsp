@@ -30,18 +30,18 @@
 	<tr>
 		<th>상품명</th>
 		<td width="343" colspan="5">
-			<input type="text" name="name" size="47" maxlength="100" value="${productVo.name}"/>
+			<input type="text" name="name" size="47" maxlength="100" value="${productVO.name}"/>
 		</td>
 	</tr>
 	<tr>
 		<th>원가[A]</th>
 		<td width="70">
-			<input type="text" name="price1" size="11" onKeyUp='NumFormat(this)' value="${productVo.price1}" />
+			<input type="text" name="price1" size="11" onKeyUp='NumFormat(this)' value="${productVO.price1}" />
 		</td>
 		<th>판매가[B]</th>
 		<td width="70">
 			<input type="text" name="price2" size="11" onBlur="go_ab()" onKeyUp='NumFormat(this)' 
-			value="${productVo.price2}"/>
+			value="${productVO.price2}"/>
 		</td>
 		<th>[B-A]</th>
 		<td width="72">
@@ -75,7 +75,7 @@
 	<tr>
 		<th>상세설명</th>
 		<td colspan="5">
-			<textarea name="content" cols="70" rows="8">이뻐요</textarea>
+			<textarea name="content" cols="70" rows="8">${productVO.content}</textarea>
 		</td>
 	</tr>
 	<tr>
@@ -86,7 +86,7 @@
 		</td>
 	</tr>
 </table>
-<input type="button" value="등록" class="btn" onclick="go_save()"/>
+<input type="button" value="수정" class="btn" onclick="go_mod_save()"/>
 <input type="button" value="취소" class="btn" onclick="go_mov()"/>
 </form>
 </article>

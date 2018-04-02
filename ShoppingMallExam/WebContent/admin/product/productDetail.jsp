@@ -35,6 +35,10 @@
 	</table>
 	<!-- [8] 수정버튼이 눌리면 상품 수정페이지로 이동하되 현재페이지와 상품 일련번호 값을 전달해준다.-->
 	<input type="button" value="수정" class="btn" onclick="go_mod('${tpage}','${productVO.pseq}')"/>
+	
+	<!-- 삭제 버튼이 눌리면 현재페이지와 상품 일련번호 값을 전달해준다 -->
+	<input type="button" value="삭제" class="btn" onclick="go_delete('${tpage}','${productVO.pseq}')"/>
+	
 	<!-- [9] 목록버튼이 눌리면 상품 리스트 페이지로 이동하되 현재 페이지를 전달해 준다. -->
 	<input type="button" value="목록" class="btn" onclick="go_list('${tpage}')"/>
 </form>
