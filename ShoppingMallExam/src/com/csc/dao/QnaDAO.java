@@ -104,6 +104,61 @@ public class QnaDAO {
 	}
 	
 	
+	/**
+	 * 
+	 * 관리자모드에서 필요한 메소드
+	 */
+	
+	public ArrayList<QnaVO> listAllQna(){
+		ArrayList<QnaVO> qnaList = new ArrayList<QnaVO>();
+		String sql = "select * from qna order by indate desc";
+		Connection conn = null;
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				QnaVO qnaVO = new QnaVO();
+				qnaVO.setQseq(rs.getInt("qseq"));
+				qnaVO.setSubject(rs.getString("subject"));
+				qnaVO.setContent(rs.getString("content"));
+				qnaVO.setId(rs.getString("id"));
+				qnaVO.setIndate(rs.getTimestamp("indate"));
+				qnaVO.setReply(rs.getString("reply"));
+				qnaVO.setRep(rs.getString("rep"));
+				qnaList.add(qnaVO);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		}finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+		return qnaList;
+	}
+	
+	
+	public void updateQna(QnaVO qnaVO) {
+		String sql = "update qna set reply = ?, rep='2' where qseq=?";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, qnaVO.getReply());
+			pstmt.setInt(2, qnaVO.getQseq());
+			pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+			e.getMessage();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+	}
 	
 	
 }
